@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 盒模型 、背景、文字排版</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            background-image: linear-gradient(90deg,rgb(97, 181, 181),#9198e5);
+            width: 200px;
+            height: 200px;
+            margin-top: 100px;
+            margin-bottom: 4em;
+        margin-left: auto;
+        margin-right: auto;
+
+            border: dashed 1px rgb(206, 98, 98);
+        padding: 20px;
+        border-radius: 10px 20px;
+        box-shadow: 3px 3px 10px #ccc;
+        }
+        div p {
+        margin: 0;
+        line-height: 200px;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 900;
+        color: #4b4b4b;
+        font-family: "Bernard MT";
+        }
+        .text {
+        text-indent: 2em;
+        line-height: 1.7;
+        font-family: "思源宋体";
+        font-size: 32px;
+        font-weight: 300;
+        text-align: justify;
+        letter-spacing: 1px;
+      }
+        span {
+        text-decoration:rgb(252, 173, 63) wavy underline;
+        background-color: rgb(197, 251, 240);
+      }
+    </style>
+</head>
+<body>
+    <div>
+        <p>2024</p>
+    </div>
+    <p class="text">
+        没有人会对这里感到陌生，宝岛台湾从有历史的那刻起，<span>每声心跳，山海麓林都听得到，</span>涌动的心事、呢喃的低语，总能经过逾千公里的脐带，流入心脏。
+    </p>
+</body>
+</html>
