@@ -1,5 +1,5 @@
 <!DOCTYPE html>  
-<html lang="en">  
+<html lang="zh">  
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
@@ -21,6 +21,9 @@
   .character-intro li {  
     margin-bottom: 5px;  
   }  
+  #generate-button {  
+    margin-top: 10px;  
+  }  
 </style>  
 </head>  
 <body>  
@@ -34,6 +37,8 @@
     <li id="charm"></li>  
   </ul>  
 </div>  
+  
+<button id="generate-button">生成新人物</button>  
   
 <script>  
 // JavaScript 代码  
@@ -58,7 +63,10 @@ function generateWuxiaCharacter() {
   document.getElementById('charm').textContent = '魅力：' + randomCharm;  
 }  
   
-// 生成随机人物介绍  
+// 为生成按钮添加点击事件监听器  
+document.getElementById('generate-button').addEventListener('click', generateWuxiaCharacter);  
+  
+// 页面加载时生成一次人物介绍  
 generateWuxiaCharacter();  
 </script>  
   
