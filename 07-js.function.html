@@ -1,0 +1,66 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>随机武侠人物介绍</title>  
+<style>  
+  /* CSS 样式 */  
+  .character-intro {  
+    border: 1px solid #ccc;  
+    padding: 10px;  
+    margin-bottom: 10px;  
+  }  
+  .character-intro h2 {  
+    margin-top: 0;  
+  }  
+  .character-intro ul {  
+    list-style-type: none;  
+    padding: 0;  
+  }  
+  .character-intro li {  
+    margin-bottom: 5px;  
+  }  
+</style>  
+</head>  
+<body>  
+  
+<div id="character" class="character-intro">  
+  <h2>人物介绍</h2>  
+  <ul>  
+    <li id="origin"></li>  
+    <li id="jingfu"></li>  
+    <li id="gender"></li>  
+    <li id="charm"></li>  
+  </ul>  
+</div>  
+  
+<script>  
+// JavaScript 代码  
+function generateRandomItem(array) {  
+  return array[Math.floor(Math.random() * array.length)];  
+}  
+  
+function generateWuxiaCharacter() {  
+  const origins = ['武林世家', '山野村落', '江湖游侠', '皇宫内院'];  
+  const jingfu = ['九阳真经', '葵花宝典', '易筋经', '六脉神剑'];  
+  const genders = ['男', '女'];  
+  const charmLevels = ['倾国倾城', '风华绝代', '英俊潇洒', '容貌平平'];  
+  
+  const randomOrigin = generateRandomItem(origins);  
+  const randomJingfu = generateRandomItem(jingfu);  
+  const randomGender = generateRandomItem(genders);  
+  const randomCharm = generateRandomItem(charmLevels);  
+  
+  document.getElementById('origin').textContent = '出身：' + randomOrigin;  
+  document.getElementById('jingfu').textContent = '所练京赋：' + randomJingfu;  
+  document.getElementById('gender').textContent = '性别：' + randomGender;  
+  document.getElementById('charm').textContent = '魅力：' + randomCharm;  
+}  
+  
+// 生成随机人物介绍  
+generateWuxiaCharacter();  
+</script>  
+  
+</body>  
+</html>
