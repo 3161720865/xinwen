@@ -3,33 +3,75 @@
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>随机武侠人物介绍</title>  
+<title>古风武侠人物随机生成器</title>  
 <style>  
-  /* CSS 样式 */  
+  /* CSS 样式 - 古风主题 */  
+  body {  
+    font-family: 'Arial', sans-serif;  
+    background-color: #f0e6d8; /* 淡黄背景 */  
+    color: #333;  
+    padding: 20px;  
+  }  
   .character-intro {  
+    background-color: #fff; /* 白色背景 */  
     border: 1px solid #ccc;  
-    padding: 10px;  
-    margin-bottom: 10px;  
+    padding: 20px;  
+    margin-bottom: 20px;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* 阴影效果 */  
   }  
   .character-intro h2 {  
+    text-align: center;  
+    color: #666;  
+    font-weight: normal;  
     margin-top: 0;  
+    margin-bottom: 10px;  
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7); /* 文字阴影 */  
   }  
   .character-intro ul {  
     list-style-type: none;  
     padding: 0;  
   }  
   .character-intro li {  
-    margin-bottom: 5px;  
+    margin-bottom: 10px;  
   }  
   #generate-button {  
-    margin-top: 10px;  
+    display: block;  
+    width: 100%;  
+    max-width: 200px;  
+    padding: 10px;  
+    background-color: #a33333; /* 暗红背景 */  
+    color: #fff;  
+    font-weight: bold;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    transition: background-color 0.3s ease; /* 平滑过渡效果 */  
+    margin: 0 auto;  
+    margin-bottom: 20px;  
+  }  
+  #generate-button:hover {  
+    background-color: #802a2a; /* 鼠标悬停时颜色变深 */  
+  }  
+  /* 添加一些古风装饰性元素 */  
+  body::before {  
+    content: "";  
+    display: block;  
+    position: fixed;  
+    left: 0;  
+    top: 0;  
+    width: 100%;  
+    height: 100%;  
+    z-index: -1;  
+    background: url('your-ancient-pattern-image.jpg') repeat; /* 背景图，替换为你的古风图案 */  
+    background-size: 200px; /* 背景图大小 */  
+    opacity: 0.1; /* 透明度 */  
   }  
 </style>  
 </head>  
 <body>  
   
-<div id="character" class="character-intro">  
-  <h2>人物介绍</h2>  
+<div class="character-intro">  
+  <h2>古风武侠人物介绍</h2>  
   <ul>  
     <li id="origin"></li>  
     <li id="jingfu"></li>  
@@ -38,10 +80,10 @@
   </ul>  
 </div>  
   
-<button id="generate-button">生成新人物</button>  
+<button id="generate-button">随机生成</button>  
   
 <script>  
-// JavaScript 代码  
+// JavaScript 代码（与之前相同）  
 function generateRandomItem(array) {  
   return array[Math.floor(Math.random() * array.length)];  
 }  
@@ -54,21 +96,4 @@ function generateWuxiaCharacter() {
   
   const randomOrigin = generateRandomItem(origins);  
   const randomJingfu = generateRandomItem(jingfu);  
-  const randomGender = generateRandomItem(genders);  
-  const randomCharm = generateRandomItem(charmLevels);  
-  
-  document.getElementById('origin').textContent = '出身：' + randomOrigin;  
-  document.getElementById('jingfu').textContent = '所练京赋：' + randomJingfu;  
-  document.getElementById('gender').textContent = '性别：' + randomGender;  
-  document.getElementById('charm').textContent = '魅力：' + randomCharm;  
-}  
-  
-// 为生成按钮添加点击事件监听器  
-document.getElementById('generate-button').addEventListener('click', generateWuxiaCharacter);  
-  
-// 页面加载时生成一次人物介绍  
-generateWuxiaCharacter();  
-</script>  
-  
-</body>  
-</html>
+  const randomGender = generate
