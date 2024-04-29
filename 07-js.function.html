@@ -1,99 +1,67 @@
 <!DOCTYPE html>  
-<html lang="zh">  
+<html lang="en">  
 <head>  
 <meta charset="UTF-8">  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>古风武侠人物随机生成器</title>  
+<title>随机生成武侠人物</title>  
 <style>  
-  /* CSS 样式 - 古风主题 */  
-  body {  
-    font-family: 'Arial', sans-serif;  
-    background-color: #f0e6d8; /* 淡黄背景 */  
-    color: #333;  
-    padding: 20px;  
-  }  
-  .character-intro {  
-    background-color: #fff; /* 白色背景 */  
-    border: 1px solid #ccc;  
-    padding: 20px;  
-    margin-bottom: 20px;  
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* 阴影效果 */  
-  }  
-  .character-intro h2 {  
-    text-align: center;  
-    color: #666;  
-    font-weight: normal;  
-    margin-top: 0;  
-    margin-bottom: 10px;  
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7); /* 文字阴影 */  
-  }  
-  .character-intro ul {  
-    list-style-type: none;  
-    padding: 0;  
-  }  
-  .character-intro li {  
-    margin-bottom: 10px;  
-  }  
-  #generate-button {  
-    display: block;  
-    width: 100%;  
-    max-width: 200px;  
-    padding: 10px;  
-    background-color: #a33333; /* 暗红背景 */  
-    color: #fff;  
-    font-weight: bold;  
-    border: none;  
-    border-radius: 5px;  
-    cursor: pointer;  
-    transition: background-color 0.3s ease; /* 平滑过渡效果 */  
-    margin: 0 auto;  
-    margin-bottom: 20px;  
-  }  
-  #generate-button:hover {  
-    background-color: #802a2a; /* 鼠标悬停时颜色变深 */  
-  }  
-  /* 添加一些古风装饰性元素 */  
-  body::before {  
-    content: "";  
-    display: block;  
-    position: fixed;  
-    left: 0;  
-    top: 0;  
-    width: 100%;  
-    height: 100%;  
-    z-index: -1;  
-    background: url('your-ancient-pattern-image.jpg') repeat; /* 背景图，替换为你的古风图案 */  
-    background-size: 200px; /* 背景图大小 */  
-    opacity: 0.1; /* 透明度 */  
-  }  
+    body {  
+        font-family: 'Arial', sans-serif;  
+        background-color: #f0f0f0;  
+        color: #333;  
+        text-align: center;  
+        padding: 20px;  
+    }  
+    h1 {  
+        font-family: 'Kaiti', serif;  
+        color: #666;  
+    }  
+    button {  
+        font-size: 16px;  
+        padding: 10px 20px;  
+        margin-top: 20px;  
+        cursor: pointer;  
+    }  
+    #character-info {  
+        margin-top: 30px;  
+        font-size: 18px;  
+    }  
 </style>  
 </head>  
 <body>  
-  
-<div class="character-intro">  
-  <h2>古风武侠人物介绍</h2>  
-  <ul>  
-    <li id="origin"></li>  
-    <li id="jingfu"></li>  
-    <li id="gender"></li>  
-    <li id="charm"></li>  
-  </ul>  
-</div>  
-  
-<button id="generate-button">随机生成</button>  
+<h1>随机生成武侠人物</h1>  
+<button id="generateButton">随机生成</button>  
+<div id="character-info"></div>  
   
 <script>  
-// JavaScript 代码（与之前相同）  
-function generateRandomItem(array) {  
-  return array[Math.floor(Math.random() * array.length)];  
-}  
+    // 武侠人物的设定数据  
+    const origins = ['武林世家', '孤儿', '乡野村夫', '边疆异族', '名门之后'];  
+    const genders = ['男', '女'];  
+    const charmLevels = ['倾国倾城', '风华绝代', '貌若天仙', '英俊潇洒', '相貌平平'];  
+    const uniqueSkills = ['九阳真经', '六脉神剑', '降龙十八掌', '玉女心经', '葵花宝典'];  
   
-function generateWuxiaCharacter() {  
-  const origins = ['武林世家', '山野村落', '江湖游侠', '皇宫内院'];  
-  const jingfu = ['九阳真经', '葵花宝典', '易筋经', '六脉神剑'];  
-  const genders = ['男', '女'];  
-  const charmLevels = ['倾国倾城', '风华绝代', '英俊潇洒', '容貌平平'];  
+    // 随机生成武侠人物信息  
+    function generateCharacter() {  
+        const character = {  
+            origin: origins[Math.floor(Math.random() * origins.length)],  
+            gender: genders[Math.floor(Math.random() * genders.length)],  
+            charmLevel: charmLevels[Math.floor(Math.random() * charmLevels.length)],  
+            uniqueSkill: uniqueSkills[Math.floor(Math.random() * uniqueSkills.length)]  
+        };  
   
-  const randomOrigin = generateRandomItem(origins);  
-  const randomJingfu = generateRandomItem(jingfu);  
-  const randomGender = generate
+        // 显示在页面中  
+        const characterInfo = document.getElementById('character-info');  
+        characterInfo.innerHTML = `  
+            <p>出身：${character.origin}</p>  
+            <p>性别：${character.gender}</p>  
+            <p>魅力：${character.charmLevel}</p>  
+            <p>绝招：${character.uniqueSkill}</p>  
+        `;  
+    }  
+  
+    // 为按钮添加点击事件监听器  
+    const generateButton = document.getElementById('generateButton');  
+    generateButton.addEventListener('click', generateCharacter);  
+</script>  
+</body>  
+</html>
