@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小明小张</title>
+</head>
+<body>
+    <script>
+        function sayHello(){
+            console.log("这是来自函数的，你好!");
+        }
+        sayHello();
+    // 定义类
+    class Student{
+        //对象构造器
+        constructor(专业,学校,姓名){
+            this.专业=专业
+            this.学校=学校
+            this.姓名=姓名
+        }
+        //类中的变量，叫做属性
+        专业="新闻学"
+        //类class中的函数function叫做方法
+        打招呼(对象,内容){
+
+        }
+        sayHello(){
+            console.log("这是来自方法的，你好!");
+            console.log(${this.姓名})
+        }
+        sweetlove(){
+            console.log("开始一段没有结果的恋情......")
+        }
+    }
+    // 定义对象
+    let 小明 = new Student()
+    console.log(typeof 小明)；
+   // 小明.专业
+   // 小明.sayHello（）；
+   //小明.sweetlove();
+   // let 小张 = new Student()
+   // console.log(typeof 小张)；
+   // 小张.sayHello（）；
+   // 小张.sweetlove();
+    //let 小明 = new Student()
+    //小明.专业="前端开发";
+   // console.log（小明,专业）;
+   //小明.谈恋爱();
+   const小明=new 学生（'新闻学','西北民族大学','小明'）
+   const小张=new 学生（'核物理','剑桥大学','小张'）
+   console.log(小明,专业)
+   console.log(小张,专业)
+   小明.打招呼("小张","你好你好你好");
+   小张.打招呼("小明","蟹蟹你");
+    </script>
+</body>
+</html>
